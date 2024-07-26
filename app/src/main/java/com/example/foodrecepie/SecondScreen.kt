@@ -11,11 +11,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 
 @Composable
-fun SecondScreen(navToFirstScreen:()->Unit){
+fun SecondScreen(name:String,navToFirstScreen:()->Unit){
     Column {
-        var name by remember{ mutableStateOf("") }
+        Text(text = "Hello $name")
         Text(text = "Second Screen")
-        OutlinedTextField(value = name, onValueChange = {name = it})
         Button(onClick = { navToFirstScreen() }) {
             Text(text = "Goto First Page")
         }
